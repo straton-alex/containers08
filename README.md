@@ -8,7 +8,7 @@
 Scopul acestei lucrări este familiarizarea cu integrarea continuă utilizând `GitHub Actions`, dezvoltarea competențelor în crearea și testarea unei aplicații web `PHP` cu `SQLite`, precum și înțelegerea modului de configurare a unui flux de lucru automatizat pentru construirea și testarea aplicației într-un container `Docker`.
 
 ## Sarcina
-Crearea unei aplicații web `PHP` funcționale cu o bază de date `SQLite`, scrierea testelor unitare pentru clasele `Database` și `Page`, și configurarea unui flux de integrare continuă cu `GitHub Actions`. Aplicația va fi construită și testată într-un container `Docker`, utilizând un `Dockerfile` pentru a seta mediul `PHP` și `SQLite`, și un fișier .`github/workflows/main.yml` pentru a automatiza construirea imaginii `Docker` și rularea testelor la fiecare push pe ramura main.
+Crearea unei aplicații web `PHP` funcționale cu o bază de date `SQLite`, scrierea testelor unitare pentru clasele `Database` și `Page`, și configurarea unui flux de integrare continuă cu `GitHub Actions`. Aplicația va fi construită și testată într-un container `Docker`, utilizând un `Dockerfile` pentru a seta mediul `PHP` și `SQLite`, și un fișier .`github/workflows/main.yml` pentru a automatiza construirea imaginii `Docker` și rularea testelor la fiecare `push` pe ramura `main`.
 
 --- 
 
@@ -768,11 +768,11 @@ git push origin main
 
    - `Testele unitare` verifică dacă bucăți mici de cod (funcții, metode) `funcționează` corect, ajută la găsirea erorilor, îmbunătățesc calitatea și ușurează modificările.
 
-    **Cât de des?** Rulează-le la fiecare schimbare de cod (`commit/push`), automat prin `CI` (ex. `GitHub Actions`), și local `înainte` de `commit`.
+    - `Cât de des?` Rulează-le la fiecare schimbare de cod (`commit/push`), automat prin `CI` (ex. `GitHub Actions`), și local `înainte` de `commit`.
 
 3. **Care modificări trebuie făcute în fișierul `.github/workflows/main.yml` pentru a rula testele la fiecare solicitare de trage (Pull Request)?**
 
-   - Pentru a configura fișierul `.github/workflows/main.yml `astfel încât testele să ruleze și la fiecare solicitare de tragere (`Pull Request`), trebuie să adăugați evenimentul `pull_request` în secțiunea on a fluxului de lucru. În prezent, fluxul rulează doar la `push `pe ramura `main`. Adăugând `pull_request`, testele vor fi declanșate și atunci când se creează sau se actualizează un pull request către ramura` main`.
+   - Pentru a configura fișierul `.github/workflows/main.yml `astfel încât testele să ruleze și la fiecare solicitare de tragere (`Pull Request`), trebuie să adăugați evenimentul `pull_request` în secțiunea on a fluxului de lucru. În prezent, fluxul rulează doar la `push `pe ramura `main`. Adăugând `pull_request`, testele vor fi declanșate și atunci când se creează sau se actualizează un pull request către ramura` main`:
 
         - Exemplu
             - Actualizați secțiunea on din fișierul `.github/workflows/main.yml` pentru a include `pull_request` alături de `push`:
@@ -877,7 +877,7 @@ git push origin main
                 - După ce împingeți modificările, verificați tab-ul `Actions` în repository-ul `GitHub` pentru a confirma că fluxul rulează.
                 - La finalul execuției, pasul `Remove the Docker image` ar trebui să apară în log-uri, iar imaginea `containers08` va fi ștearsă de pe runner.
 
-                    ![](images/Screenshot-2025-04-19-201737.png)
+    ![](images/Screenshot-2025-04-19-201737.png)
 --- 
 ### 9. Concluzie
 
