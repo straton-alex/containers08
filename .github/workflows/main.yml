@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -25,3 +28,5 @@ jobs:
         run: docker stop container
       - name: Remove the container
         run: docker rm container
+      - name: Remove the Docker image
+        run: docker image rm containers08
