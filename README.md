@@ -1,1 +1,1 @@
-# containers08
+# IWNO8: Integrare continuă cu Github Actions
