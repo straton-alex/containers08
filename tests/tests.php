@@ -11,7 +11,7 @@ $testFramework = new TestFramework();
 function testDbConnection() {
     global $config;
     try {
-        $db = new Database($config["dbSavvy($config["db"]["path"]);
+        $db = new Database($config["db"]["path"]);
         return true;
     } catch (Exception $e) {
         return false;
